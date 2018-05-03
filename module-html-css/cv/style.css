@@ -1,0 +1,176 @@
+@font-face {
+	font-family: "hafidou";
+	src: url('Im Wunderland.otf');
+}
+
+header {
+	background-color:rgba(0, 0, 0, 0.6);
+	color:white;
+	padding:40px,40px,40px;
+	display:flex;
+	
+	/*
+	padding-top:30px; 
+	padding-right: 20px; 
+	padding-bottom: 15px; 
+	padding-left: 80px; 
+	*/
+}
+
+#mdjdev{
+	font-family:Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin: auto;
+}
+
+header h1 {
+	text-transform: uppercase;
+	margin-bottom: 0rem;
+	text-shadow: azure;
+}
+
+header h3 {
+	text-transform: uppercase;
+	margin-top: 0rem;
+}
+
+.menu{
+	margin:1rem 5rem 0rem 5rem;
+    text-align: center;
+	background-color:rgb(46, 45, 45);
+	padding:1rem;
+
+}
+
+.menu a {
+	color:rgb(255, 255, 255);
+	text-decoration: none;
+	padding:0rem 2rem 0rem 2rem;
+	font-weight:bold;  
+}
+
+#identite{
+	background-color: white;
+	padding:1rem;
+}
+
+#formation{
+    background-color: white;
+	padding:1rem;
+	margin-top:1rem;
+}
+
+#ci{
+    background-color: white;
+	padding:1rem;
+	margin-top:1rem;	
+}
+
+#exp{
+	background-color: white;
+	padding:1rem;
+}
+
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	background:url("fond-d-ecran-noir-gratuit.jpg")no-repeat fixed center;
+	margin-left: 20rem;
+	margin-right:20rem;
+	/* margin: auto; */
+}
+
+section{
+	display: flex;
+	/* background-color:whitesmoke; */
+	padding:5rem;
+}
+
+section h2{
+	border-bottom: 2px solid red; 
+	font-family :hafidou; 
+}
+
+h2 {
+ 	color:red;
+	text-transform: uppercase;
+}
+
+h3 {
+	text-transform:uppercase;
+}
+
+footer{
+	text-align:center; 
+	padding: 0.1rem; 
+	color:white; 
+	background-color:0px; 
+	
+}
+
+.img {
+    transition: transform 1s; /* Animation */
+}
+
+.img:hover{
+	transform: scale(1.2);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+aside{
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+}
+
+#exp{
+	width:80%;
+	margin-left: 3rem;
+}
+iframe{
+margin-top:1rem; 	
+}
+
+.poste {
+	font-weight: bold;
+}
+
+.Contactmap{
+	background-color: rgba(36, 36, 36, 0.733);
+}
+
+.mecontacter{
+	font-family: "hafidou";
+ 	color:red;
+	text-align: center;
+	background-color: rgb(226, 226, 226);
+	width: 50%;
+	margin-left:1rem; 
+}
+
+#contact {
+	background-color: rgb(226, 226, 226);
+	padding: 1rem;
+	margin-left:3rem;
+
+	width: 35%;
+}
+
+form label {
+	font-size: 1em;
+	margin-top : 10px;
+}
+
+#map{
+	padding: 5rem;
+	margin: auto;
+
+
+}
+
+
+
+

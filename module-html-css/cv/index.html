@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Hafidhou Mdjahila</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	
+	<body>
+
+		<header>
+			<div class="img">
+				<img src="djahil.png" alt="photo de profil." style="width:170px;height:170px; border-radius: 50%; border: 2px solid white; ">
+			</div>
+			<div id="mdjdev" >
+				<h1>mdjahila hafidhou </h1><br>
+						<h3>développeur web</h3>
+			</div> 
+		</header>
+
+		<div class="menu">
+			<a href="#identite">Identité</a>
+			<a href="#formation">Formations</a>
+			<a href="#exp">Expériences professionnelles</a>
+			<a href="#ci">Centres d'Intérêts</a>
+		</div>
+		
+		<section>
+			<aside>
+				<div id="identite"> 
+					<h2>identité</h2>
+					<b>Adresse</b> : 24 impasse Chevreul - 69100 Villeurbanne<br>
+					<b>Tel</b> : 0634665144<br>
+					<b>Email : </b><a href=https://mail.google.com>hafidhou.mdj@gmail.com</a><br>
+					<b>Né le</b> : 07/04/1994<br>  
+					24 ans<br>
+					<b>permis B, vehiculé</b>
+				</div>
+
+				<div id="formation">
+					<h2>formations</h2>
+					Avril 2018 - ce jour : <b>Technicien Développement Web</b> - <i>"House of Code / CNAM</i>
+					<b>2015 - 2017</b> : 2e année de Licence en Science de la vie ( Université Claude Bernad Lyon 1 )
+					<br><b>2013 - 2015</b> : 1ère année de Licence en Science de la vie ( Université de Strasbourg )
+					<br><b>2013</b> Baccalauréat Scientifique ( Lycée du Nord à Mayotte : mention assez bien )
+				</div>	
+
+				<div id="ci">
+					<h2>centres d'intérêts</h2>
+					<b>Sports</b> : Running et musculation
+					<br><b>Musique</b> : Création et production de musique avec un logiciel professionnel Fl studio
+				</div>
+
+	<iframe src="https://www.youtube.com/embed/ilpi9SvaS9o" width="560" height="315" allowfullscreen></iframe>
+
+			</aside>
+
+			<div id="exp">
+				<h2>expériences professionnelles</h2>
+				Août - Sept 2017 : <span class="poste">Agent de production alimentaire</span> - <i>"Actuel emploi" [Monique Ranou]</i>
+				<ul>
+					<li>Opération manuelle d'embalage, de tri de produits alimentaires</li>
+					<li>Chargement des chariots au départ de l'entrepôt</li>
+				</ul><br>
+				Juin 2017 : <span class="poste">Agent de production alimentaire</span> - <i>"Actuel emploi" [Chancerelle usine sardine]</i>
+				<ul>
+					<li>Réchargement des camions, déballage des cartons de sardine et décongélation,respect du rythme de travail imposé</li>
+				</ul><br>
+				Juin 2017 : <span class="poste">Inventoriste</span> - <i>"Proman" [Auchan, Carrefour, Leclerc]</i>
+				<ul>
+					<li>Rescencement de produits alimentaires et non alimentaires</li>
+				</ul><br>
+				Juill. 2014 : <span class="poste">Agent logistique sav</span> - <i>"Cadiou industrie"</i>
+				<ul>
+					<li>Réception et gestion de commandes retournées par les clients : Préparation et vérification de la marchandise</li>
+				</ul>
+			</div>
+
+		</section>
+		
+		<section class ="Contactmap">
+			<div id="contact">
+					<div class="mecontacter">
+							<h2>Me contacter</h2>
+					</div>
+				<form name="formcontact">
+					<label for="gender">Civilité :</label><br>
+						<input type="radio" id="gender" name="gender" value="man">Homme
+						<input type="radio" id="gender" name="gender" value="woman">Femme
+						<input type="radio" id="gender" name="gender" value="other">Autre<br>
+					<label for="firstname">Prénom :</label><br>
+						<input type="text" id="firstname" name="Prénom" value=""><br>
+					<label for="lastname">Nom :</label><br>
+						<input type="text" id="lastname" name="nom" value=""><br>
+					<label for="email">Email :</label><br>
+						<input type="text" name="email" id ="email" value=""><br>
+					<label for="pays">Pays :</label><br>
+						<select name="pays" id="pays">
+							<option value="france">France</option>
+							<option value="suisse">Suisse</option>
+							<option value="belgique">Belgique</option>
+						</select><br>
+					<label for="emploi">Raison :</label><br>
+						<input type="checkbox" name="emploi" id="emploi">Proposition d'emploi
+						<input type="checkbox" name="biere" id="emploi">Boire une bière
+						<input type="checkbox" name="autre" id="emploi">Autre<br><br>
+					<label for="message">Message :</label><br> 
+						<textarea name="message" id="message" rows="10" cols="40">Votre message ici !</textarea><br><br>
+						<input type="submit" value="Envoyer"><br><br>
+						<input type="reset" value="Réinitialiser"> 
+				</form> 
+			</div>
+			<div id="map">
+					<iframe width="450" height="400"
+					src="https://www.openstreetmap.org/export/embed.html?bbox=4.80301558971405%2C45.77040801916667%2C4.807494878768922%2C45.772127382307524&amp;layer=mapnik&amp;marker=45.771268642815826%2C4.805255234241486" 
+					style="border: 1px solid black"></iframe>
+			</div>
+		</section>	
+		
+		<footer>
+				<p>CV Réalisé par Mdjahila Hafidhou &copy House of Code 2018</p>
+		</footer>
+
+	</body>
+  
+	
+</html>
