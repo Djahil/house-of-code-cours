@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="FR">
+<head>
+    <meta charset="UTF-8">
+    <title>Mega War 3</title>
+    <link rel="stylesheet" href="ww2.css">
+    <script type="text/javascript" src=""></script>
+</head>
+<body>
+ <div id="app">
+
+        <section id="homepage">
+            <h1> Black OPS IV</h1>
+            
+            <ul>
+                <li>
+                    <label for="input_player1">nom joueur 1</label>
+                    <input type="text" id="input_player1" name="player1">
+                </li>
+                <li>
+                    <label for="input_player2">nom joueur 2</label>
+                    <input type="text" id="input_player2" name="player2">
+                </li>
+            </ul>
+            <h2>Sélection des agents</h2>
+            <ul id="character-selector" >
+                <li id="red"><a href="#" class="character" data-character="p1"><img src="http://via.placeholder.com/160x160"></a></li>
+
+                <li id="blue"><a href="#" class="character" data-character="p2"><img src="http://via.placeholder.com/160x160"></a></li>
+
+                <li id="orange"><a href="#" class="character" data-character="p3"><img src="http://via.placeholder.com/160x160"></a></li>
+
+                <li id="green"><a href="#" class="character" data-character="p4"><img src="http://via.placeholder.com/160x160"></a></li>
+            </ul>
+            <button id="btn-start-game" type="submit">start</button>
+        </section>
+
+        <section id="game">
+            
+        </section>
+        <section id="gameOver">
+            
+        </section>
+    </div>
+
+    <script type="text/javascript" src="ww2.js"></script>
+    <script type="text/javascript"  src="homePage.js"></script>
+    <script type="text/javascript"  src="uiGame.js"></script>
+    <script>
+    function init(){
+            const app = new App();
+            app.start()
+        }
+        document.getElementsByTagName("body")[0].addEventListener("load", init());
+    </script>
+</body>
+</html>
