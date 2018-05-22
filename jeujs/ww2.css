@@ -3,13 +3,13 @@
 	  margin: 0;
 }
 html {
-  font-family: sans-serif;
+  font-family: s;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-   background: white;
+   background: rgba(213, 250, 250, 0.651);
 }
 
 
@@ -35,25 +35,16 @@ li,ol{
 #homepage{
 	text-align: center;
 }
-#red {
-   background-color: white;
-   display: inline-block;
-   width: 160px;
-   height: 160px;
-   box-shadow: 0 0 0 1px grey inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 grey, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
-   -moz-transition: 0.15s;
-   -o-transition: 0.15s;
-   -webkit-transition: 0.15s;
-   transition: 0.15s;
-   margin: 10px ;
+
+#nomJoueur{
+  text-transform:uppercase;
+  font-family:'Courier New', Courier, monospace;
+  display:inline-flex;
+
 
 }
-
-
-#red:active {
-
-	background-color: red;
-  box-shadow: 0 5px #666;
+#character-selector li:active {
+  box-shadow: 0 5px rgb(255, 255, 255);
   transform: translateY(4px);
 }
 
@@ -67,7 +58,7 @@ li,ol{
 	width: 160px;
    height: 160px;
   /* box-shadow: 0 0 0 5px grey inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 grey, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);*/
-	box-shadow:0px 20px 10px grey;  
+	box-shadow:0px 10px 10px grey;  
    -moz-transition: 0.15s;
    -o-transition: 0.15s;
    -webkit-transition: 0.15s;
@@ -76,31 +67,10 @@ li,ol{
    display: inline-block;
 }
 
-#character-selector li:active{
-  	/* box-shadow: 0 5px #666; */
-  	box-shadow:0px 05px 10px grey;  
-  	transform: translateY(4px);
+#character-selector li:hover, #character-selector li.current{
+  box-shadow:0px 20px 20px gray;  
+  transform: translateY(8px);
 
-}
-
-#character-selector li:nth-child(1){
-	background-color: red;
-}
-#character-selector li:nth-child(1):active{
-	background: #cc0000;
-}
-
-
-#character-selector li:nth-child(2){
-	background-color: blue;
-}
-
-#character-selector li:nth-child(3){
-	background-color: orange;
-}
-
-#character-selector li:nth-child(4){
-	background-color: green;
 }
 
 /*button {
@@ -121,15 +91,20 @@ button:active {
 }*/
 
 
-#btn {
-	border: none;
-    width: 65px;
-    height: 80px;
-    background: yellow url('btn.png') center;
+#btn-start-game {
+  border : solid;
+	border-radius: 25px;
+    width: 30rem;
+    height: 5rem;
+    background: rgba(21, 255, 0, 0.397) ;
 }
-#btn:hover {
-    background: url('btn2.png') center;
+#btn-start-game:hover {
+    background:rgba(32, 255, 2, 0.424);
 }
-#btn:foous{
+#btn-start-game:foous{
 	outline: 0;
+}
+#btn-start-game:active{
+  background:rgb(0, 255, 0); 
+
 }

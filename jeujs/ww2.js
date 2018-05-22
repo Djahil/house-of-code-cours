@@ -80,10 +80,11 @@ class App {
         }
 
         // Set new Value
-        if (this.characterGamer1 == null) {
+        if (this.characterGamer1 === null) {
             this.characterGamer1 = character;
         }
-        else if (this.characterGamer2 == null) {
+        else if (this.characterGamer2 === null) {
+
             this.characterGamer2 = character;
         }
 
@@ -91,10 +92,9 @@ class App {
         console.log('Player 2 is :', this.characterGamer2);
     }
 
-  /*onStartGame (desabled){
+  onStartGame (desabled){
     this.gameStarted = true;
-    //this.UIGame = new UIGame(this) // on appel l'interface de Jeu querySelector('#game')
+    this.UIGame = new UIGame(this) // on appel l'interface de Jeu querySelector('#game')
 
-  }*/
-
+  } 
 }
