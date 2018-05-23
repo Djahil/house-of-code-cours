@@ -78,7 +78,7 @@ class UIHomePage {
         }
 
         // P1 P2 ok
-        if(this.app.characterGamer1 == null || this.app.characterGamer1 == null ){
+        if(this.app.characterGamer1 == null || this.app.characterGamer2 == null ){
             canBeStart = false;
         }
      
@@ -98,24 +98,38 @@ class UIHomePage {
         document.addEventListener('keydown', this.onKeyDown.bind(this));
         //document.addEventListener('keyup', this.onKeyUp.bind(this));
     }
-
+   
    onKeyDown(event){
+    event.preventDefault();
         // récupérer l'index du current default 0
-        
+       let characterChosen = event.currentTarget.dataset.character;
+       
         // supprimer current sur l'ensemble
-
-        // move right
-            // index + 1
-
+        this.element = document.getElementsByClassName("current"),
+        this.moveLeft = false;
+        this.moveRight = false;
+        this.index = 0;
         // move left
+        for(let i = 0; i < this.charactersList.length; i++){
+            let a = this.charactersList[i];
+            if(event.key == 'ArrowLeft' && a.value === ".character" ) {
+                moveLeft = true;
+            this.element.className = "none";
+                index = index - 1;
+            }
+        }
+       
             // index - 1
+
+        // move rigth
+            // index + 1
 
         // attribuer la class current sur le nouvel index
 
 
         // toucher entrer
-            // 
-    this.charactersList
+       // trouver l'index et les data
+    
 
 
    }

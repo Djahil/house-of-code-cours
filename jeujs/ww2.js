@@ -90,11 +90,15 @@ class App {
 
         console.log('Player 1 is :', this.characterGamer1);
         console.log('Player 2 is :', this.characterGamer2);
+        console.log("character + 1");
     }
 
   onStartGame (desabled){
     this.gameStarted = true;
     this.UIGame = new UIGame(this) // on appel l'interface de Jeu querySelector('#game')
+    
+   
 
   } 
+ 
 }

@@ -44,7 +44,7 @@ li,ol{
 
 }
 #character-selector li:active {
-  box-shadow: 0 5px rgb(255, 255, 255);
+	box-shadow:0px 1px 10px rgb(255, 75, 75);
   transform: translateY(4px);
 }
 
@@ -67,10 +67,8 @@ li,ol{
    display: inline-block;
 }
 
-#character-selector li:hover, #character-selector li.current{
-  box-shadow:0px 20px 20px gray;  
+#character-selector li:hover, #character-selector li.current{ 
   transform: translateY(8px);
-
 }
 
 /*button {
