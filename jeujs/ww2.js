@@ -68,34 +68,50 @@ class App {
     onChooseCharacter(character) {
 
         // Second click on character, remove data
-        if (this.characterGamer1 === character) {
+        if (this.characterGamer1 === character){
             this.characterGamer1 = null;
             return;
         }
 
         // Second click on character, remove data
-        if (this.characterGamer2 === character) {
+        if (this.characterGamer2 === character){
             this.characterGamer2 = null;
             return;
         }
 
         // Set new Value
-        if (this.characterGamer1 === null) {
+        if (this.characterGamer1 === null){
             this.characterGamer1 = character;
+            
         }
-        else if (this.characterGamer2 === null) {
-
+        else if (this.characterGamer2 === null){
             this.characterGamer2 = character;
         }
 
         console.log('Player 1 is :', this.characterGamer1);
         console.log('Player 2 is :', this.characterGamer2);
-        console.log("character + 1");
+
+       
+
+    }
+    onKeyPress(character){
+
+        if(event.keyCode == 13 ){
+            this.characterGamer1 == character;
+        }
+        else if (event.keyCode == 13 && this.characterGamer2 == null){
+            this.characterGamer2 ==character;  
+        }
+        console.log(event); 
+        console.log('Player 1 is :', this.characterGamer1);
+        console.log('Player 2 is :', this.characterGamer2);
+
+
     }
 
   onStartGame (desabled){
     this.gameStarted = true;
-    this.UIGame = new UIGame(this) // on appel l'interface de Jeu querySelector('#game')
+    this.UIGame = new UIGame(this); // on appel l'interface de Jeu querySelector('#game')
     
    
 

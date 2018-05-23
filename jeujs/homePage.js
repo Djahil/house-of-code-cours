@@ -22,6 +22,7 @@ class UIHomePage {
     initDOMElements(){
         this.el = this.app.el.querySelector('#homepage');
         this.characterSelector = this.el.querySelector('#character-selector');
+        this.characterListLi = this.el.querySelectorAll('.character_li');
         this.charactersList = this.characterSelector.querySelectorAll('.character');
         this.buttonStartGame = this.el.querySelector('#btn-start-game');
 
@@ -51,7 +52,6 @@ class UIHomePage {
 
     onChooseCharacter(event) {
         event.preventDefault();
-
         let characterChosen = event.currentTarget.dataset.character;
         this.app.onChooseCharacter(characterChosen);
 
@@ -93,45 +93,54 @@ class UIHomePage {
     render() {
 
     }
-    initKeyboardListener(event){
+    initKeyboardListener(){
 
         document.addEventListener('keydown', this.onKeyDown.bind(this));
+        document.addEventListener('keypress',this.onKeyPress.bind(this));
         //document.addEventListener('keyup', this.onKeyUp.bind(this));
     }
    
    onKeyDown(event){
-    event.preventDefault();
+    
         // récupérer l'index du current default 0
-       let characterChosen = event.currentTarget.dataset.character;
-       
-        // supprimer current sur l'ensemble
-        this.element = document.getElementsByClassName("current"),
-        this.moveLeft = false;
-        this.moveRight = false;
-        this.index = 0;
-        // move left
-        for(let i = 0; i < this.charactersList.length; i++){
-            let a = this.charactersList[i];
-            if(event.key == 'ArrowLeft' && a.value === ".character" ) {
-                moveLeft = true;
-            this.element.className = "none";
-                index = index - 1;
-            }
-        }
-       
-            // index - 1
-
-        // move rigth
-            // index + 1
-
-        // attribuer la class current sur le nouvel index
-
-
-        // toucher entrer
-       // trouver l'index et les data
+     let monChoix = document.querySelector('li.current');
+     let indexCurrent = 0;
     
 
 
+     for(let i = 0; i < this.characterListLi.length; i++){
+            let li = this.characterListLi[i];
+
+        if(li == monChoix){
+            indexCurrent = i;
+        }
+
+            li.classList.remove('current');
+        }
+
+            console.log(event.keyCode)
+
+        if(event.keyCode == 39){
+            indexCurrent++;
+        }
+        else if(event.keyCode == 37){
+            indexCurrent--;
+        }
+     
+        if(indexCurrent < 0){
+            indexCurrent ++;
+        }
+        else if (indexCurrent > 3){
+            indexCurrent --;
+        }
+
+     this.characterListLi[indexCurrent].classList.add('current');
+     
+   }
+   onKeyPress(event){
+    let monChoix = document.querySelector('character_li');
+
+    this.app.onKeyPress(monChoix);
    }
 }
 
