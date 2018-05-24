@@ -36,6 +36,7 @@ class UIHomePage {
         for (let i = 0; i < this.charactersList.length; i++) {
             let a = this.charactersList[i];
             a.addEventListener('click', this.onChooseCharacter.bind(this));
+
         }
 
         // Event on button start
@@ -51,20 +52,19 @@ class UIHomePage {
      */
 
     onChooseCharacter(event) {
-        event.preventDefault();
+
+    
         let characterChosen = event.currentTarget.dataset.character;
+        for( let i = 0; )
         this.app.onChooseCharacter(characterChosen);
-
-
     }
-
     /**
      * Click on button start game
      *
      * @param event
      */
     onStartGame(event) {
-        //event.preventDefaut();
+
         
         console.log('On click btn start')
         let onClickBntStart = event.target.disabled;
@@ -96,29 +96,31 @@ class UIHomePage {
     initKeyboardListener(){
 
         document.addEventListener('keydown', this.onKeyDown.bind(this));
-        document.addEventListener('keypress',this.onKeyPress.bind(this));
+        //document.addEventListener('keypress',this.onKeyPress.bind(this));
         //document.addEventListener('keyup', this.onKeyUp.bind(this));
     }
    
    onKeyDown(event){
-    
-        // récupérer l'index du current default 0
+        this.onSelectCharacterFromKeyboard(event);
+        this.onChooseCharacterFromKeyboard(event);
+   }
+
+   onSelectCharacterFromKeyboard(){
+          // récupérer l'index du current default 0
      let monChoix = document.querySelector('li.current');
      let indexCurrent = 0;
     
-
-
      for(let i = 0; i < this.characterListLi.length; i++){
+            
             let li = this.characterListLi[i];
-
-        if(li == monChoix){
-            indexCurrent = i;
-        }
-
             li.classList.remove('current');
+            
+            
+            if(li == monChoix){
+                indexCurrent = i;
+            }     
         }
-
-            console.log(event.keyCode)
+        console.log(event.keyCode)
 
         if(event.keyCode == 39){
             indexCurrent++;
@@ -134,13 +136,28 @@ class UIHomePage {
             indexCurrent --;
         }
 
-     this.characterListLi[indexCurrent].classList.add('current');
-     
+    this.characterListLi[indexCurrent].classList.add('current');
    }
-   onKeyPress(event){
-    let monChoix = document.querySelector('character_li');
 
-    this.app.onKeyPress(monChoix);
-   }
+   onChooseCharacterFromKeyboard(event){
+       //keyPress enter
+        if(event.keyCode != 13){
+            return;
+        }
+        let li = document.querySelector('li.current');
+        if(li!= undefined){
+
+            for(let i = 0; i < this.characterListLi.length; i++){
+                this.characterListLi[i].classList.remove('checked');
+            }
+
+            // li add class checked
+            li.classList.add('checked');
+
+            let characterChosen = li.querySelector('a').dataset.character;
+        this.app.onChooseCharacter(characterChosen);
+        }    
+    }
+
 }
 

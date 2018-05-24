@@ -3,7 +3,6 @@
 	  margin: 0;
 }
 html {
-  font-family: s;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -18,6 +17,12 @@ h1 {
   font-family: 'Courier New', Courier, monospace;
   color: black;
 }
+h2{
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  margin-top:3rem;
+
+}
 
 li,ol{
 	list-style:none;
@@ -28,37 +33,35 @@ li,ol{
  box-sizing: border-box;
  border: 2px solid black;
  margin: 6rem auto; 
- background: white;
- background-image: url("back2.jpg");
+ /*background-image: url("btn2.png");*/
+
 }
 
 #homepage{
-	text-align: center;
+  text-align: center;
+
 }
 
-#nomJoueur{
+#monJoueur{
   text-transform:uppercase;
-  font-family:'Courier New', Courier, monospace;
   display:inline-flex;
-
-
 }
-#character-selector li:active {
-	box-shadow:0px 1px 10px rgb(255, 75, 75);
-  transform: translateY(4px);
-}
+/*#character-selector li:active{
+  box-shadow:0px 1px 10px rgb(255, 0, 0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}*/
 
 #character-selector {
 	padding: 0;
-    margin: 100px 0px;
-
+    margin: 80px 0px;
 
 }
 
 #character-selector li{
 	width: 160px;
    height: 160px;
-  /* box-shadow: 0 0 0 5px grey inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 grey, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);*/
+   /*border-radius: 5rem;*/
 	box-shadow:0px 10px 10px grey;  
    -moz-transition: 0.15s;
    -o-transition: 0.15s;
@@ -66,11 +69,25 @@ li,ol{
    transition: 0.15s;
    margin: 10px ;
    display: inline-block;
+ 
 
 }
-
-#character-selector li:hover, #character-selector li.current{ 
+img{
+  /*border-radius: 5rem;*/
+}
+#character-selector li:hover,
+#character-selector li.current,
+#character-selector li.checked { 
   transform: translateY(-20px);
+  box-shadow:0px 10px 50px rgb(20, 14, 14);
+}
+#character-selector li.checked { 
+  box-shadow:0px 5px 70px rgb(250, 0, 0);
+}
+
+a{
+  font-family: 'Courier New', Courier, monospace;
+
 }
 
 /*button {
@@ -96,15 +113,17 @@ button:active {
 	border-radius: 25px;
     width: 30rem;
     height: 5rem;
-    background: rgba(21, 255, 0, 0.397) ;
+    background:rgba(46, 147, 156, 0.383);
+    box-shadow:0px 10px 10px grey;
 }
 #btn-start-game:hover {
-    background:rgba(32, 255, 2, 0.424);
+    background:rgba(175, 251, 237, 0.664);
 }
 #btn-start-game:foous{
 	outline: 0;
 }
 #btn-start-game:active{
-  background:rgb(0, 255, 0); 
+  background : rgba(21, 255, 0, 0.397) ;
+  box-shadow:0px 0px 0px rgba(0, 0, 0, 0.623);  
 
 }
