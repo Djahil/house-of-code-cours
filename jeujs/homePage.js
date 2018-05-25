@@ -36,7 +36,7 @@ class UIHomePage {
         for (let i = 0; i < this.charactersList.length; i++) {
             let a = this.charactersList[i];
             a.addEventListener('click', this.onChooseCharacter.bind(this));
-
+           /* a.addEventListener('OnMouseDown', this.mouse.bind(this));*/
         }
 
         // Event on button start
@@ -52,12 +52,28 @@ class UIHomePage {
      */
 
     onChooseCharacter(event) {
-
-    
         let characterChosen = event.currentTarget.dataset.character;
-        for( let i = 0; )
         this.app.onChooseCharacter(characterChosen);
+
+        this.renderSelectedCharacters();
+
     }
+    /*mouse(event){
+        let onMouseDown = false;
+        let onMouseUp = false;
+        
+        for(let i = 0; i < characterChosen.length; i++){
+            let a = characterChosen[i];
+            if (a.value === 'p1'){
+                onMouseDown = true;
+            }
+            else if ( a!= undefined){
+               onMouseUp = false;
+            }
+           
+        }
+
+    }*/
     /**
      * Click on button start game
      *
@@ -147,16 +163,35 @@ class UIHomePage {
         let li = document.querySelector('li.current');
         if(li!= undefined){
 
-            for(let i = 0; i < this.characterListLi.length; i++){
-                this.characterListLi[i].classList.remove('checked');
+            let characterChosen = li.querySelector('a').dataset.character;
+            this.app.onChooseCharacter(characterChosen);
+
+            this.renderSelectedCharacters();
+        }    
+    }
+
+    renderSelectedCharacters(){
+        // Remove all class on li with class checked
+        for(let i = 0; i < this.characterListLi.length; i++){
+            this.characterListLi[i].classList.remove('selected');
+            this.characterListLi[i].classList.remove('selectedplayer1');
+            this.characterListLi[i].classList.remove('selectedplayer2');
+        }
+
+        for(let i = 0; i < this.characterListLi.length; i++){
+            let li = this.characterListLi[i];
+            let a = li.querySelector('a');
+
+            if(a.dataset.character == this.app.characterGamer1){
+                li.classList.add('selected');
+                li.classList.add('selectedplayer1');
             }
 
-            // li add class checked
-            li.classList.add('checked');
-
-            let characterChosen = li.querySelector('a').dataset.character;
-        this.app.onChooseCharacter(characterChosen);
-        }    
+            if(a.dataset.character == this.app.characterGamer2){
+                li.classList.add('selected');
+                li.classList.add('selectedplayer2');
+            }
+        }
     }
 
 }

@@ -85,18 +85,7 @@ class App {
         }
         else if (this.characterGamer2 === null){
             this.characterGamer2 = character;
-        }
-        
-        let li = document.querySelector('li.current');
-        if( li!= undefined){
-            
-            for(let i = 0; i < this.characterSelector.length; i++){
-                this.characterSelector[i].classList.remove('checked');
-            }
-            li.classList.add('checked');
-
-        }
-        
+        } 
 
         console.log('Player 1 is :', this.characterGamer1);
         console.log('Player 2 is :', this.characterGamer2);

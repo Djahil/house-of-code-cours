@@ -33,7 +33,7 @@ li,ol{
  box-sizing: border-box;
  border: 2px solid black;
  margin: 6rem auto; 
- /*background-image: url("btn2.png");*/
+ background-image: url("btn2.png");
 
 }
 
@@ -41,16 +41,20 @@ li,ol{
   text-align: center;
 
 }
-
 #monJoueur{
-  text-transform:uppercase;
   display:inline-flex;
-}
-/*#character-selector li:active{
-  box-shadow:0px 1px 10px rgb(255, 0, 0);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-}*/
+}
+#input_player1{
+background-color:rgba(255, 0, 0, 0.562);
+border-radius:3rem; 
+}
+#input_player2{
+background-color: rgba(0, 0, 255, 0.527);
+border-radius:3rem; 
+}
+
+
 
 #character-selector {
 	padding: 0;
@@ -61,7 +65,7 @@ li,ol{
 #character-selector li{
 	width: 160px;
    height: 160px;
-   /*border-radius: 5rem;*/
+   border-radius: 5rem;
 	box-shadow:0px 10px 10px grey;  
    -moz-transition: 0.15s;
    -o-transition: 0.15s;
@@ -73,17 +77,26 @@ li,ol{
 
 }
 img{
-  /*border-radius: 5rem;*/
+  border-radius: 5rem;
 }
 #character-selector li:hover,
 #character-selector li.current,
-#character-selector li.checked { 
+#character-selector li.selected  { 
   transform: translateY(-20px);
   box-shadow:0px 10px 50px rgb(20, 14, 14);
 }
-#character-selector li.checked { 
+#character-selector li.selectedplayer1{ 
   box-shadow:0px 5px 70px rgb(250, 0, 0);
 }
+#character-selector li.selectedplayer2{ 
+  box-shadow:0px 5px 70px rgb(0, 46, 250);
+}
+#character-selector li:active{
+  box-shadow:0px 1px 70px rgb(250, 0, 0);
+
+}
+
+
 
 a{
   font-family: 'Courier New', Courier, monospace;
