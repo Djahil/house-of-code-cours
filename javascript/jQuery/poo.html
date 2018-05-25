@@ -1,0 +1,46 @@
+<html>
+    <boody>
+        <script>
+            class Person {
+                constructor(firstname, lastname, email, age, gender,) {
+                    this.firstname = firstname;
+                    this.lastname = lastname;
+                    this.email = email;
+                    this.age = age;
+                    this.gender = gender;
+                
+                }
+                fullName() {
+                    return this.firstname + ' ' + this.lastname;
+                }
+                isAdult(){
+                    return this.age > 18 ;
+                }
+            }
+            
+            let p1 = new Person('Alex', 'P', 'plop@gmail.com', 29, 'M');
+            let p2 = new Person('Maggi','Simpson','mag@gmail.com', 2,'F');
+            let p3 = new Person('Homer','Simpson', 'hom@gmail.com', 32, 'M');
+            let p4 = new Person('bart', 'Simpson', 'bart@gmail.com',9,'M');
+            let p5 = new Person('Lisa', 'Simpson','lisa@gmail.com', 8, 'F');
+            let p6 = new Person('Marge','Simpson', 'marge@gmail.com', 30,'F');
+            
+            let people =[p1, p2, p3, p4, p5, p6,];
+            
+            function lesAdult(people){
+                let lastName ='';
+                let adult = 0;
+                for(let i = 0; i < people.length; i++){
+                    let person = people[i];
+                    if ( person.isAdult() ){
+                    lastName = person.fullName();
+                    adult++;
+                    }
+                }
+                return  lastName ;
+            }
+            console.log('Les adultes sont :', lesAdult(people));
+         
+        </script>
+    </boody>
+</html>

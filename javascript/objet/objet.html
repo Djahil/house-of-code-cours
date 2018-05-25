@@ -1,0 +1,104 @@
+<html>   
+    <body>
+        <script type="text/javascript">
+            
+            let people01 = {
+            firstName: 'Patrick',
+            lastName:'Dupont',
+            age:'25',
+            email:'pat.rick@gmail.com',
+            gender:'man',
+            fullName: function(){
+                    return this.firstName+" "+this.lastName;
+                }
+            };
+
+            let people02 = {
+            firstName: 'Lisa',
+            lastName:'Fox',
+            age:'35',
+            email:'lisafox@gmail.com',
+            gender:'woman',
+            fullName: function(){
+                    return this.firstName+" "+this.lastName;
+                }
+            };
+            let people03 = {
+            firstName: 'Sahra',
+            lastName:'Croche',
+            age:'20',
+            email:'s.ra@gmail.com',
+            gender:'woman',
+                fullName: function(){
+                    return this.firstName+" "+this.lastName;
+                }
+            };
+            let people =[people01, people02, people03];
+            //console.log('fullName', people);
+
+            //for(let i = 0; i < people.length; i++){
+            //    let person = people[i];
+                //console.log(person.gender);
+           // }
+
+          /* function nbGirls(tab){
+               let girls = 0;
+
+                for (let i = 0; i < people.length; i++){
+                    let genre = people[i];
+                    if (genre.gender =='woman'){
+                        girls++;
+                    }   
+                }
+
+                return girls;
+            };
+        console.log('Nombre de filles : ', nbGirls(people));*/
+         
+         /*function nbGars(tab){
+             let garçons = 0;
+             for (i = 0; i < people.length;  i++);
+              let  gars = people[i];
+              if(gars.gender =='man'){
+                  garçons++;
+              }
+            return garçons;
+         }
+
+         console.log('Nombre de garçcons :', nbGars(people));*/
+
+         /*function plusAG(tab){
+            let vieux = 0;
+            let lastName = '';
+
+            for (let i = 0; i < tab.length; i ++){
+                let a = tab[i];
+                if(vieux < a.age){
+                    vieux = a.age;
+                    lastName = a.fullName()
+                }
+                
+            }
+            return lastName;
+         }
+    console.log('la personne la plus agée est :', plusAG(people));*/
+    
+    function plusJN(tab){
+       let jeune = 0;
+       let lastName ='';
+        for (i = 0; i <tab.length; i ++){
+            let b = tab[i];
+            if(jeune < b.age){
+                jeune = jeune - b.age;
+                lastName = b.fullName()
+            }
+        
+        }
+        return lastName;
+    }
+    console.log('la personne la plus jeune est :', plusJN(people))
+        /*nom complet : function () {return this.firstName + "" + this.lastName;} */
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Casse Brique</title>
+    <style>
+        @font-face {
+	    font-family: 'hafidou';
+	    src: url('Sacred Hertz Straight.otf');
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(24, 184, 184);
+        }
+
+        #container{
+            position: relative;
+            width: 800px;
+            height: 800px;
+            box-sizing: border-box;
+            background-color: rgb(0, 0, 0);
+            margin: 0 auto; /* centrage horizontal */
+            border-radius: 12px;
+            border:2rem;
+    
+        }
+
+
+        #paddle {
+            position: absolute;
+            bottom: 50px;
+            left: 200px;
+            width: 200px;
+            height: 15px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 2px;
+        }
+
+        #ball {
+            position: absolute;
+            left: 300px;
+            bottom: 200px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .brick {
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            width: 100px;
+            height: 22px;
+            margin:auto;
+            border-radius: 5px;
+
+        }
+        #score{
+            background-color: rgb(0, 0, 0);
+            text-transform: uppercase;
+            font-family:'hafidou';
+            color: rgb(250, 250, 250);
+            display: flex;
+            justify-content:center; 
+            
+        
+        }
+
+        #scoreNumber{
+            color:white; 
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="ball"></div>
+        <div id="paddle"></div>
+        <div id="score">score&nbsp:&nbsp<span id="scoreNumber"></span></div>
+    </div>
+    <script type="text/javascript">
+             
+        //variable
+
+    const step = 20;
+    let moveLeft = false;
+    let moveRight = false;
+
+    
+    
+        // Elements HTML
+    const container = document.querySelector('#container');
+    const paddle = document.querySelector('#paddle');
+    const ball = document.querySelector('#ball');
+    const score = document.querySelector('#scoreNumber');
+    const bricks = [];
+
+    let scorePoints = 0;
+           
+    /**
+     * Keyboard event
+     */
+    function initKeyboardListener() {
+        document.addEventListener('keydown', onKeyDown, false);
+        document.addEventListener('keyup', onKeyUp, false);
+    }
+
+    /**
+     * On key down keyboard
+     */
+    function onKeyDown(event) {
+       
+        if(event.key == 'ArrowLeft') {
+            moveLeft = true;
+        }
+
+        if(event.key == 'ArrowRight') {
+            moveRight = true;
+      
+         console.log(event);  }
+    } 
+
+    /**
+     * On key up keyboard
+     */
+    function onKeyUp(event) {
+        if(event.key == 'ArrowLeft') {
+            moveLeft = false;
+        }
+
+        if(event.key == 'ArrowRight') {
+            moveRight = false;
+        }
+    }
+
+
+    /**
+     * Move Paddle
+     */
+             //console.log('currentPostionX', currentPostionX);
+        
+        // Limit left
+        // currentPositionX < 0
+        // currentPositionX = 0
+
+        // currentPositionX + largeur de la barre > 800
+        // currentPositionX = 800 
+        
+    function movePaddle() {
+        let currentPositionX = paddle.offsetLeft;
+
+        
+
+        if(moveLeft){
+            currentPositionX -= step ;
+        }
+        if (moveRight){
+            currentPositionX += step ;
+        }
+
+        let paddleWidth = 200;
+        let containerWidth = 800; 
+        let paddleLeft = currentPositionX;
+        let paddleRight = paddleLeft + paddleWidth;
+
+        if (paddleLeft < 0 ){
+        currentPositionX = 0;
+        }
+
+        if (paddleRight > containerWidth){
+            currentPositionX = containerWidth - paddleWidth;
+        }
+
+        paddle.style.left = currentPositionX + 'px';
+
+    }
+        var ballRadius = 10;
+        var ballDx = 2;
+        var ballDy = - 2;
+     
+     function moveBall() {
+        let currentPositionLeft = ball.offsetLeft;
+        let currentPositionTop = ball.offsetTop;
+
+        currentPositionLeft += ballDx;
+        currentPositionTop += ballDy;
+
+        ball.style.left = currentPositionLeft + 'px';
+        ball.style.top = currentPositionTop + 'px';
+        
+        let ballWidth = ball.offsetWidth;
+        let containerWidth = container.offsetWidth;
+        
+        //top
+        if (currentPositionTop < 0 ){
+            ballDy = - ballDy;
+       }
+        //bottom
+        if (currentPositionTop > containerWidth - ballWidth){
+            ballDy = - ballDy;
+        }
+        //left
+        if (currentPositionLeft < 0 ){
+        ballDx = - ballDx;
+        }
+        //Right
+        if ( currentPositionLeft > containerWidth - ballWidth){
+            ballDx = -ballDx;
+        } 
+     } 
+    
+    function checkCollisionPaddle(){
+        let ballWidth =ball.offsetWidth;
+        let ballCenterX = ball.offsetLeft + ballWidth;
+        let ballCenterY = ball.offsetTop + ballWidth;
+
+        let paddleWidth = paddle.offsetWidth;
+        let paddleHeight = paddle.offsetHeight;
+
+        let paddleLeftX = paddle.offsetLeft ;
+        let paddleRightX = paddleLeftX + paddleWidth;
+        let paddleTopY = paddle.offsetTop;
+        let paddleBottomY = paddleTopY + paddleHeight;
+         
+         //colision
+    if ( ((ballCenterX > paddleLeftX) && (ballCenterX < paddleRightX )) && ((ballCenterY > paddleTopY) &&( ballCenterY < paddleBottomY))){
+        ballDy = - ballDy;
+        
+        }
+    }
+     
+    function createBrick(){
+        
+        let brickWidth = 50; // largeur d'une brique
+        let brickHeight = 22; // hauteur d'une brique
+        let brickMargin = 15; // espacement entre les briques
+        
+        let numberBrickPerLine = 9; // nombre de brique par ligne
+        let numberBrickPerColumn = 6; // nombre de brique par colonne
+        
+        let positionX = 0; // position x de la brique en cours de création
+        let positionY = 0; // position y de la brique en cours de création
+        for (let i = 0; i < numberBrickPerLine ; i ++){
+        positionX = (800 - (5 * 100 + 4 * 15)) / 2;
+        positionY +=  brickHeight + brickMargin;
+        for ( let j = 0; j < numberBrickPerLine; j++) {
+        
+        let brick = document.createElement('div'); // creation d'un élément div
+        brick.className = 'brick'; // ajout de la class css .brick
+
+        brick.className = 'brick'
+        brick.style.width = brickWidth + 'px'; //attribution du style
+        brick.style.height = brickHeight + 'px';
+        brick.style.left = positionX + 'px';
+        brick.style.top = positionY + 'px';
+
+        container.appendChild(brick); // on ajoute l'élément div à notre container
+
+        positionX += brickWidth + brickMargin; // la position X de la brique suivante, sera la largeur d'une brique + la margin
+
+        bricks.push(brick); // on ajoute la brick au tableau de briques créé dans les variables globales
+        }
+       }
+     }
+    
+    function checkCollisionBricks() {
+    let ballWidth = ball.offsetWidth ;
+    let ballCenterX = ball.offsetLeft + ballWidth;
+    let ballCenterY = ball.offsetTop + ballWidth;
+    for (let i = bricks.length - 1; i >= 0; i--) { // ici on boucle à l'envers
+    let b = bricks[i];
+    let brickLeft = b.offsetLeft;
+    let brickTop = b.offsetTop;
+    let brickWidth = 50;
+    let brickHeight = 22;
+    let brickRight = brickLeft + brickWidth;
+    let brickBottom = brickTop + brickHeight;
+
+    
+    // [...] variable la collisiont
+    
+    // Collision
+    if (((ballCenterY < brickBottom) && (ballCenterY > brickTop))
+     && ((ballCenterX > brickLeft) && (ballCenterX < brickRight))) {
+      ballDy = - ballDy; // changement de direction pour la balle
+      container.removeChild(b); // on supprime l'élément visuellemen  
+      bricks.splice(i, 1);
+      scorePoints++; 
+     // on supprime la brick du tableau
+    }
+  }
+}
+    function drawScore(){
+            score.innerHTML = scorePoints;
+        }
+
+    function gameOver() {
+        let currentPositionLeft = ball.offsetLeft;
+        let currentPositionTop = ball.offsetTop;
+        let containerWidth = container.offsetWidth;
+        let ballWidth = ball.offsetWidth ;
+
+          if (currentPositionTop > containerWidth - ballWidth){
+            container.removeChild(ball);
+            alert("Game over");
+            location.reload();
+        }
+    }
+    
+    /**
+     * 60 FPS rendering
+     */ 
+    function loop(){
+        window.requestAnimationFrame(function() {
+            movePaddle();
+            moveBall();
+            checkCollisionPaddle();
+            checkCollisionBricks();  
+            gameOver();
+            drawScore();       
+            loop();
+        })
+    }
+
+    /**
+     * Init game
+     */
+    function init() {
+        //Init
+        initKeyboardListener();
+        createBrick();
+        loop();
+    }
+
+    init();
+    </script>
+</body>
+</html>

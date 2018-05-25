@@ -1,0 +1,47 @@
+
+    <body>
+        <!-- Ici vos futures balises html -->
+        <script type="text/javascript">
+            // ici votre code javascript
+            // ...
+		/*let monAge = prompt('quel âge avez-vous ?');
+				if (monAge > 18) {
+					alert("Vous êtes majeur, tout est ok :) ")
+				}	
+				else {
+					alert(" Vous êtes mineur; vous n'avez rien à faire ici.");
+				}
+			console.log(monAge);*/
+			let Taille = prompt('Quel est votre taille en centimetre ?(cm)');
+			let Poids = prompt('Quel est votre poids en kilogramme ? (kg)');
+			/*taill = taille/100*/
+			let IMC = Poids /Math.pow(Taille/100,2);
+			if (IMC < 16.5) {
+                alert("vous êtes en dénutrition");
+            }
+            else if (IMC > 16.5 && IMC < 18.5) {
+                alert("Vous êtes maigre");
+            }
+            else if (IMC >= 18.5 && IMC < 25) {
+                alert("Vous avez une corpulence normale");
+            }
+            else if (IMC >= 25 && IMC < 30) {
+                alert("Vous êtes en surpoids");
+            }
+            else if (IMC >= 30 && IMC < 35) {
+                alert("Vous avez une obésité modérée");
+            }
+            else if (IMC >= 35 && IMC < 40) {
+                alert("Vous avez une obésité sévère");
+            }
+            else if (IMC <= 40) {
+                alert("Vous avez une obésité morbide");
+            }
+            else {
+                alert("Il y a une erreur");
+            }
+			console.log(IMC);
+	
+        </script>
+    </body>
+</html>

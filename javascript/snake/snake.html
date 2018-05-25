@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+        <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        #snake{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+
+        }
+
+        .snake-part{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: darkgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="snake">
+            <div class="snake-part"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    var canvas;
+        // Déclaration des variables globales à notre programme
+       
+        const snake = document.querySelector('#snake');
+        
+        function initKeyboardListener() {
+            // écoute des event clavier
+        }
+        
+        function moveSnake() { 
+            
+        for (var z = dots; z > 0; z--) {
+    
+        x[z] = x[(z - 1)];
+        y[z] = y[(z - 1)];
+        }
+
+            if (leftDirection) {
+
+        x[0] -= DOT_SIZE;
+        }
+
+            if (rightDirection) {
+
+        x[0] += DOT_SIZE;
+        }
+
+            if (upDirection) {
+
+        y[0] -= DOT_SIZE;
+        }
+
+            if (downDirection) {
+
+            y[0] += DOT_SIZE;
+        }
+        }     
+            // déplacement du serpent
+        
+        function init() {
+            initKeyboardListener();
+        
+            // on lance la fonction de déplacement au rythme de 3 images par seconde
+            setInterval(function() {
+                moveSnake();
+            }, 1000 / 3)
+        }
+        
+        init();
+    </script>
+</body>
+</html>

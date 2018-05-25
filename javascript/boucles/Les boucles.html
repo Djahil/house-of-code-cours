@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Les Boucles en JavaScript</title>
+		<link rel="#" href="#">
+	</head>
+	<body>	<div id="content"></div>
+        <!-- Ici vos futures balises html -->
+        <script type="text/javascript">
+            // ici votre code javascript
+            // ...
+			/*let addition = 2*10;
+			console.log(addition);*/
+			
+			
+			/*let monNombre = 0;
+			let i = 0;
+				while (i < 100) {
+					monNombre = monNombre + 2;
+					i++;
+					console.log(i + ' : ' + monNombre);
+				}*/
+			let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+			/*0console.log('alphabet : ', alphabet);*/
+
+			/*alphabet = alphabet.split('');*/
+
+			/*console.log('alphabet : ', alphabet);
+			console.log('alphabet index 0 : ', alphabet[0]);
+			console.log('alphabet index 1 : ', alphabet[1]);
+			console.log('alphabet index 2 : ', alphabet[2]);*/
+			
+			/*for (let i = 0; i < 26; i++){
+			console.log('alphabet : ', alphabet[i]);
+			}*/
+			/*let a = 0;
+			let b = 1;
+			let c = 1;*/
+			
+			/*let i = 0;
+			
+			while ( i < 20 ){
+			 console.log(a);
+			 console.log(b);
+			 console.log(c);
+			 a = b + c;
+			 b = a + c;
+			 c = a + b;
+			 i++;
+			}*/
+			
+			/*for (let i = 0; i < 20; i++){
+				console.log(a);
+				console.log(b);
+				console.log(c);
+				a = b + c;
+				b = a + c;
+				c = a + b;
+			}*/
+		let divContent = document.querySelector("#content");
+		console.log('divContent', divContent);
+		
+		/*for(let i = 0; i < 12; i++) {
+			let content = 'o';
+
+			for(let j = 0; j < i; j++) {
+				content += 'o';
+			}
+			
+			divContent.innerHTML += content;
+			divContent.innerHTML += '<br>'
+		}
+
+		for(let i = 12; i >= 0; i--) {
+			let content = 'o';
+
+			for(let j = 0; j < i; j++) {
+				content += 'o';
+			}
+			
+			divContent.innerHTML += content;
+			divContent.innerHTML += '<br>'
+		}*/
+		
+		
+		
+			let  a = '';
+		for (let i = 0; i < 9; i++){
+			a = a + 'o';
+			divContent.append(a);
+			divContent.innerHTML += '<br>'
+			}
+		for (let i = 9; i >= 0; i--){
+			divContent.append(a);
+			divContent.innerHTML += '<br>'
+			
+
+			
+        </script>	
+
+   </body>
+</html>
