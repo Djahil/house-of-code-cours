@@ -3,7 +3,7 @@ include("Eleve.php");
 
 $Hafidhou = new Eleve("hafidhou");
 var_dump($Hafidhou);
-// -> permet d'ateindre les propieté est methode d'un objet
+// -> permet d'ateindre les propieté est methode d'une class 
 $Hafidhou->saluer();
 
 //victor est un objet 

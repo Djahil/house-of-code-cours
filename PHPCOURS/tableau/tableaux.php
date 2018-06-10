@@ -29,7 +29,6 @@ $associatif["age"] = 24;
 // tableau multidimensionnel
 $multi = array();
 $multi[0] = array();
-
 $mutli[0][0] = " blabla";
 
 //exercice

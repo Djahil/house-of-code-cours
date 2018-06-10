@@ -1,5 +1,5 @@
 <?php
-//cette classe perrmet de crée des eleves == objet
+//cette classe permet de crée des eleves == objet
  class eleve {
 
     public $nom = "hafidhou";    
@@ -21,10 +21,11 @@
         echo"coucou";
     }
 
-    public function __construct($nom){
+    public function __construct($nom ,$prenom){
         $this->nom = $nom;
+        $this->prenom = $prenom;
     }
-    // methde static
+    // methode static
     public static function courir(){
         echo "je cours";
         } 
