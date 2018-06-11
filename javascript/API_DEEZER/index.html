@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>API Deezer</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+<section id="container">
+	   <!-- Autocomplet -->
+
+	<div id="autocomplet">
+	  <form class="example" action="" method="GET" style="margin:auto;max-width:300px;margin-top:100px;">
+    	<input type="text" placeholder="Rechercher..." name="search">
+    	<button type="submit"><i class="fas fa-search"></i></button>
+    		
+      </form>
+      <ul id="Tracklist" style="margin:auto;max-width:300px;">
+			<li><img src="" alt=""></li>
+			<li><img src="" alt=""></li>
+			<li><img src="" alt=""></li>
+			<li><img src="" alt=""></li>
+			<li><img src="" alt=""></li>
+		</ul>
+    </div><br><br>
+    
+
+       <!-- Track -->
+
+    <div id="track">
+   
+    </div>
+
+
+
+</section>
+
+                              <!-- Script -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="deezertrack.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="api.js"></script>
+	<script type="text/javascript" src="autocomplet.js"></script>
+
+	
+    <script>
+    	$(document).ready(function(){
+    		const app = new App();
+    		app.start()
+    	})
+	</script>
+
+</body>
+</html>

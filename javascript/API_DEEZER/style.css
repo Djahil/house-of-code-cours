@@ -1,0 +1,68 @@
+body {
+    font-family: Arial;
+     height :40rem;
+     background :beige
+}
+
+#container{
+
+    background-color: white;
+    border : solid 1px;
+    width: 50%;
+    display:grid;
+    justify-content :center;
+    align-items: center;
+    margin-left :500px;
+    margin-top:180px;
+
+   
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 180px;
+    background: #f1f1f1;
+    margin: auto;
+}
+
+form.example button {
+    float: left;
+    width: 44px;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background:grey;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#Tracklist {
+    
+    display: none;
+    list-style: none;
+    
+}
+
+img {
+    height: 35px;
+    width: 35px;
+}
+
+li{
+    border :solid 1px;
+    display :flex;
+}

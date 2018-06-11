@@ -1,0 +1,104 @@
+récap
+JS
+déclarer une nouvelle variable :
+let mavariable = "plop"; chaine de caractere
+
+exemple = let c = 15; 
+let o = new objet(); //on déclare un nouvel objet qui se réfaire a un class
+let tab = new array();  //on déclare unnouvreeau tableau;
+
+//les conditions :
+
+if(condition){};
+exemple : if(18 < 15){};
+
+//la boucle for :
+
+en amon j'ai un tableau avec "n" valeur à l'interieur exemple :
+let tab = [.....];
+
+for (let i = 0; i < tab.length; i++){}
+//pour lire une case de mon tableau je fais
+let index = tab[i];
+
+//la bouble foreach :
+toujours dans un tableau
+
+tab.foreach(fonction(index)){};
+
+//la boucle while : 
+
+while(5 < 100);{
+	return ..;
+	i++;
+}
+
+//les fonctions
+
+function nom(parametre){}; exemple :
+
+
+function convertToFahr(celcius){
+
+	let fahr = celcuis * 9 / 5 + 32;
+	return fahr;	
+};
+
+donc si on a let f = convertToFahr(45);
+ le but d'une fonction c'est de rendre du code reutilisable;
+
+ //AJAX
+
+L'AJAX est un concept qui repose principalement dans le fait d'effectuer des échanges (envoi et réception de données) avec un serveur sans rechargement de page.
+
+On peut ainsi :
+- demander des données
+- envoyer des données pour enregistrement
+- modifier une page (complètement ou en partie)
+
+
+//API
+
+Donne acces a des donnée par le billet d'une requet "/feed" fait par un client 
+ça permet de ne par avoir a enregistre des données dans la base de donnée
+on récuper donc des informations sous forme d'API qui sont utilisalbe sur une page web on a pas a aller chercher toutes les infos, elle son misent a disposition par les API sous un format JSON.	
+
+// format JSON
+Format de fichier avec des données lisibles par l'ensembles des aplications externes comme les sites les applies les ordis, les aplis web, html 5.
+
+
+//canvas
+
+
+
+
+comment ce présent ajax
+$.ajax({
+	
+})   
+
+
+
+//gulp task ("ma-comande", function;-
+				.pipe concat
+				.pipe dest
+				.pipe brow...)
+				*
+
+//voir Raphael.js sur le net et SVG.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+

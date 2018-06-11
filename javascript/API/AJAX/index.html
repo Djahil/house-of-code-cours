@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AJAX</title>
+        <meta charset="UTF-8">
+        <style>
+                #map {
+                 height: 400px;
+                 width: 100%;
+                }
+             </style>
+    </head>
+
+    <body>
+        <form action="" method="GET" id="__form">
+            <h2>Ville :</h2>
+            <input type="text" id="__form_entry">
+            <input type="submit">
+        </form><br/>
+        <h1 id="city"></h1>
+        <img id="weather">
+        <div id="map"></div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                sendForm();
+            });
+
+            function callOpenWeatherMap(entry){
+                let apikey = "0b83e53db9f0437f3d32575c7a164389";
+
+                $.ajax({
+                    method: "GET",
+                    url: entry + apikey,
+                    dataType: "JSON"
+                }).done(function(data) {
+                    // fonction lancée au retour de l'appel
+                    let icon = data.weather[0].icon;
+                    let city = data.name;
+                    let id = data.id;
+                    let coord = data.coord;
+                    let longitude = data.coord.lon;
+                    let latitude = data.coord.lat;
+                    let icon_img = "http://openweathermap.org/img/w/"+ icon +".png";
+                    insertInHTML(city, icon_img);
+                    initMap(latitude, longitude);
+                    // sendForm();
+                    console.log(city);
+                    console.log(longitude);
+                    console.log(latitude);
+                    console.log(coord);
+                    console.log('data', data);
+                }).fail(function(error) {
+                    // Si une erreur survient lors de l'appel
+                    console.warn(error);
+                });
+            }
+
+            function insertInHTML(city, icon){
+                document.getElementById("city").innerHTML = city;
+                document.getElementById("weather").src = icon;
+            }
+
+            function sendForm(){
+                document.querySelector("#__form").addEventListener('submit', onSubmitForm);
+            }
+
+            function onSubmitForm(event){
+                event.preventDefault();
+                let entry = document.querySelector('#__form_entry').value;
+                let regEx_id = /.[0-9]/;
+                let regEx_longLat = /.[,]/;
+                
+                if (regEx_longLat.test(entry)) {
+                    let array_longLat = entry.split(",",2);
+                    let long = array_longLat[0];
+                    let lat = array_longLat[1];
+                    let send = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon="+ long + "&units=metric&APPID=";
+                    callOpenWeatherMap(send);
+                } else if (regEx_id.test(entry)){
+                    let send = "https://api.openweathermap.org/data/2.5/weather?id=" + entry + "&units=metric&APPID=";
+                    callOpenWeatherMap(send);
+                }
+                else {
+                    let send = "https://api.openweathermap.org/data/2.5/weather?q=" + entry + "&units=metric&APPID=";
+                    callOpenWeatherMap(send);
+                }
+            }
+
+            function initMap(latitude = 48.86, longitude = 2.35) {
+            var uluru = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+            }
+        </script>
+
+        <script async defer type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCncHRxsEJG-kzZrf21YHols-ih8UhFoGw&callback=initMap">
+        </script>
+    </body>
+</html>
