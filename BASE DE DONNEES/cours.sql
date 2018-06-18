@@ -220,8 +220,7 @@ Jacque
 Miche
 --requetes dze selection
 SELECT CONCAT( nom,"",prenom) AS 'nom_prenom'
-from professeur,
-ou
+from professeur,ou
 SELECT * FROM 'professeur' WHERE classe_id IS NULL;
 
 --la commende qui permet de recupéré  lesprofesseur qui ont une "class_id":--
@@ -257,8 +256,8 @@ SELECT COUNT(*) AS 'nombre_de_professeur' FROM `professeur`;
 
 SELECT COUNT(*) AS 'nombre_de_professeur' FROM `professeur` WHERE matiere = 'EPS';
 
-SELECT SUM(nombre de place) AS 'nombre de places' FROM 'classe';
-SELECT AVG(nombre de palce) AS 'nombre de places ' FRom' classe';
+SELECT SUM(nombre de place) AS 'nombre de places' FROM 'classe'; /*CALCULE LA SOMME */
+SELECT AVG(nombre de palce) AS 'nombre de places ' FRom' classe';/*CALCULE LA MOYENNE*/
 
 EXCERCICES
 séléctionner tous les etudiant de la classe 1
