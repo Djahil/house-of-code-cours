@@ -2,7 +2,7 @@
 //cette classe permet de crée des eleves == objet
  class eleve {
 
-    public $nom = "hafidhou";    
+    public $nom;    
     //une fonction dans une class est dite methode
 
     /*methode protected qui permet de saluer est limité à la class elle même, 
